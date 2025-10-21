@@ -1,0 +1,144 @@
+.newcollections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 100px auto;
+  width: 90%;
+  max-width: 1300px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/* === Section Title === */
+.newcollections h1 {
+  color: #111;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* 🔥 Clear solid black underline */
+.newcollections h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #000, #000);
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* === Grid Layout === */
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 35px;
+  width: 100%;
+  margin-top: 60px;
+  transition: all 0.3s ease;
+}
+
+/* === Card Design === */
+.collections > * {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+.collections > *:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* === Image Styling === */
+.collections img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.collections > *:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+/* === Product Info === */
+.collections h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.collections .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.collections .new-price {
+  color: #ff4e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.collections .old-price {
+  color: #999;
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
+/* === Optional Button === */
+.collections button {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.collections button:hover {
+  background: linear-gradient(90deg, #f9d423, #ff4e50);
+  transform: scale(1.05);
+}
+
+/* === Responsive Layout === */
+@media (max-width: 1200px) {
+  .collections {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .collections {
+    grid-template-columns: 1fr;
+  }
+
+  .newcollections h1 {
+    font-size: 28px;
+  }
+}
